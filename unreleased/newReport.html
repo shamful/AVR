@@ -1,0 +1,248 @@
+
+<div class="section" id="newReport" style="display:block">   
+    <form id="newReportForm" method="post">
+
+        <!-- Report Type -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">Report Type</div>
+          <div class="panel-body">
+
+             <div class="form-group" id="reportType">
+              <div class="btn-group" data-toggle="buttons">
+               <label class="btn btn-info">
+                <input name="reportType" type="radio" value="Abandoned Vehicle"/>
+                Abandoned Vehicle
+               </label>
+               <label class="btn btn-info ">
+                <input name="reportType" type="radio" value="Dangerous Vehicle"/>
+                Dangerous Vehicle
+               </label>
+               <label class="btn btn-info ">
+                <input name="reportType" type="radio" value="Nuisance Vehicle"/>
+                Nuisance Vehicle
+               </label>
+              </div>
+                  <div id="hints">
+                    <span class="help-block hint" id="hint_abandoned" style="display:none">
+                        An abandoned vehicle is a vehicle that is out of tax and meets one of the following:
+                            <ul>
+                                <li>
+                                    Damaged e.g. flat tires, broken windows, dents, extensive rust, broken lights etc.
+                                </li>
+                                <li>
+                                    Shows evidence that it has not moved for at least a month e.g. dirt, leaves, bird droppings covering vehicle etc.
+                                </li>
+                            </ul>
+                    </span>
+                    <span class="help-block hint" id="hint_dangerous" style="display:none">
+                        A dangerous vehicle is a vehicle that may constitute a fire or health hazard on the estate by virtue of its condition, lack of care or potential accessibility.
+                        It does not necessarily need to be untaxed or parked without authorisation.
+                    </span>
+                    <span class="help-block hint" id="hint_nuisance" style="display:none">
+                        A nuisance vehicle is a vehicle that is not dangerous, appears to have been abandoned but is in good condition and/or possibly of high value (£1,000 +) or a classic or collectable car.
+                    </span>
+                  </div>
+             </div>
+
+            </div>
+        </div>
+
+        <!-- Location info -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">Location</div>
+          <div class="panel-body">
+
+             <div class="form-group" id="housingArea">
+              <label class="control-label " for="housingArea">
+               Housing Area
+              </label>
+              <div class="btn-group" data-toggle="buttons">
+               <label class="btn btn-info">
+                <input name="housingArea" type="radio" value="Holland Walk"/>
+                Holland Walk
+               </label>
+               <label class="btn btn-info">
+                <input name="housingArea" type="radio" value="St John Street"/>
+                St John Street
+               </label>
+               <label class="btn btn-info">
+                <input name="housingArea" type="radio" value="Upper Street"/>
+                Upper Street
+               </label>
+              </div>
+             </div>
+
+             <div class="form-group ">
+              <label class="control-label " for="estateName">
+               Estate
+              </label>
+              <input class="form-control" id="estateName" name="estateName" type="text" required />
+             </div>
+             <div class="form-group ">
+              <label class="control-label " for="blockName">
+               Block
+              </label>
+              <input class="form-control" id="blockName" name="blockName" type="text" required />
+             </div>
+             <div class="form-group ">
+              <label class="control-label " for="accessInfo">
+               Access Information
+              </label>
+                <input class="form-control" id="accessInfo" name="accessInfo" type="text" placeholder="E.g. barrier gate, key required from ES"/>
+             </div>
+          </div>
+        </div>
+
+        <!-- Vehicle and notice info -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">Vehicle and Notice</div>
+          <div class="panel-body">
+
+            <div class="form-group ">
+              <label class="control-label " for="vehicleType">
+               Vehicle and Notice Images
+              </label>
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <!-- list of office mim types: http://stackoverflow.com/questions/4212861/what-is-a-correct-mime-type-for-docx-pptx-etc    -->
+                        <!-- all mime types: http://www.iana.org/assignments/media-types/media-types.xhtml    -->
+                    <input type="file" id="inputAttachment-1" name="inputattachment-1[]" capture="camera" multiple required />
+                </div>
+                <span class="help-block" id="hint_vehicleMake">
+                    Please attach at least four date stamped images on the date the notice was applied.  Images should meet the following criteria:
+                    <p>
+                        <ol>
+                            <li>
+                                Close up of the fixed Refuse Disposal Notice on the windscreen with details fully legible.
+                            </li>
+                            <li>
+                                Front of the vehicle showing the fixed Refuse Disposal Notice <u>and</u> the vehicle number plate.
+                            </li>
+                            <li>
+                                The whole vehicle and immediate surroundings.
+                            </li>
+                            <li>
+                                The interior of the vehicle showing evidence of any property or rubbish in the vehicle.
+                            </li>
+                        </ol>
+                    </p>
+                </span>
+             </div>
+
+             <div class="form-group" id="vehicleType">
+              <label class="control-label " for="vehicleType">
+               Vehicle Type
+              </label>
+              <div class="btn-group" data-toggle="buttons">
+               <label class="btn btn-info">
+                <input name="vehicleType" type="radio" value="Car"/>
+                Car
+               </label>
+               <label class="btn btn-info">
+                <input name="vehicleType" type="radio" value="Van"/>
+                Van
+               </label>
+               <label class="btn btn-info">
+                <input name="vehicleType" type="radio" value="Moped"/>
+                Moped
+               </label>                   
+               <label class="btn btn-info">
+                <input name="vehicleType" type="radio" value="Motorcycle"/>
+                Motorcycle
+               </label>                   
+               <label class="btn btn-info">
+                <input name="vehicleType" type="radio" value="Lorry"/>
+                Lorry
+               </label>
+              </div>
+             </div>
+
+
+             <div class="form-group ">
+              <label class="control-label " for="vehicleReg">
+               Vehicle Registration Mark
+              </label>
+              <input class="form-control" id="vehicleReg" name="vehicleReg" placeholder="E.g. AB12 CDE" type="text"/>
+             </div>
+             <div class="form-group ">
+              <label class="control-label " for="vehicleMake">
+               Vehicle Make
+              </label>
+              <input class="form-control" id="vehicleMake" name="vehicleMake" placeholder="E.g. BMW, Mercedes, Honda..." type="text"/>
+              <span class="help-block" id="hint_vehicleMake">
+               Find vehicle make using one of these third-party websites: <a href="https://www.mycarcheck.com/" target="_new">My Car Check</a> | <a href="http://www.rac.co.uk/buying-a-car/rac-car-data-check" target="_new">RAC Car Data Check</a>
+              </span>
+             </div>
+             <div class="form-group ">
+              <label class="control-label " for="vehicleModel">
+               Vehicle Model
+              </label>
+              <input class="form-control" id="vehicleModel" name="vehicleModel" type="text"/>
+             </div>
+             <div class="form-group ">
+              <label class="control-label " for="vehicleColor">
+               Vehicle Color
+              </label>
+              <input class="form-control" id="vehicleColor" name="vehicleColor" type="text"/>
+             </div>
+             <div class="form-group ">
+              <label class="control-label " for="vehicleCondition">
+               Vehicle Condition
+              </label>
+              <input class="form-control" id="vehicleCondition" name="vehicleCondition" type="text"/>
+              <span class="help-block" id="vehicleCondition">
+               Please list what makes the vehicle appear abandoned; Missing wheels, flat tyres, smashed windows, damage to bodywork, evidence of not having been moved in some time, any rubbish inside the vehicle, road tax expired.
+              </span>
+             </div>
+
+             <div class="form-group ">
+              <label class="control-label " for="taxExpiryDate">
+               Tax Expiry Date
+              </label>
+              <input class="form-control date" id="taxExpiryDate" name="taxExpiryDate" placeholder="DD/MM/YYYY" type="text"/>
+              <span class="help-block" id="taxExpiryDate">
+               Vehicles parked on Islington Estates are not required to display a tax disc, if a vehicle is in good condition and does not have a tax disc on display you should use <a href="https://www.vehicleenquiry.service.gov.uk" target="_new">GOV.UK&rsquo;s vehicle enquiry service</a>
+              </span>
+             </div>               
+
+             <div class="form-group ">
+              <label class="control-label " for="noticePlaced">
+               Refuse Disposal Notice Placed On
+              </label>
+              <input class="form-control date" id="noticePlaced" name="noticePlaced" placeholder="DD/MM/YYYY" type="text"/>
+              <span class="help-block" id="hint_noticePlaced">
+                All suspected abandoned vehicles must have a Refuse Disposal Notice affixed to the windscreen, except burnt out vehicles which should be approached within health and safety guidelines.     
+              </span>
+             </div>
+          </div>
+        </div>
+
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Owner Details (If Known)</div>
+            <div class="panel-body">
+             <div class="form-group ">
+              <label class="control-label " for="ownerName">
+               Owner Name
+              </label>
+              <input class="form-control" id="ownerName" name="ownerName" type="text"/>
+             </div>
+             <div class="form-group ">
+              <label class="control-label " for="ownerAddress">
+               Owner Address
+              </label>
+              <input class="form-control" id="ownerAddress" name="ownerAddress" type="text"/>
+             </div>
+            </div>
+        </div>
+
+
+         <div class="form-group">
+          <div>
+           <button class="btn btn-primary pull-right" id="submit" name="submit" type="submit">
+            Submit Report
+           </button>
+          </div>
+         </div>
+
+     </form>
+</div>

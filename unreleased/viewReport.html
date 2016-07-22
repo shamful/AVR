@@ -1,0 +1,114 @@
+<!-- Section: View record read only / confirmation page  -->
+<div class="section" id="viewReport">
+    <div class="panel panel-primary">
+        <div class="panel-heading" id="viewReportHeading">Viewing Report ID: <span><!-- ID --></span></div>
+        <div class="panel-body">
+            <div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-exclamation-sign"></span> <strong>Please proceed with the second inspection of this vehicle on or shortly after <span id="inspectionNotice"></span></strong></div>
+            <h4>Report</h4>   
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Reported By</td>
+                    <td id="reportedBy"></td>
+                  </tr>                    
+                  <tr>
+                    <td>Report Type</td>
+                    <td id="reportType"></td>
+                  </tr>
+                </tbody>
+            </table>
+
+            <h4>Location</h4>   
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Housing Area</td>
+                    <td id="housingArea"></td>
+                  </tr>
+                  <tr>
+                    <td>Estate</td>
+                    <td id="estate"></td>
+                  </tr>                  
+                  <tr>
+                    <td>Block</td>
+                    <td id="block"></td>
+                  </tr>
+                  <tr>
+                    <td>Access Information</td>
+                    <td id="access"></td>
+                  </tr>
+                </tbody>
+            </table>
+            
+            <h4>Vehicle and Notice</h4> 
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Attachments</td>
+                    <td id="attachments"></td>
+                  </tr>
+                  <tr>
+                    <td>Type</td>
+                    <td id="vehicleType"></td>
+                  </tr>
+                  <tr>
+                    <td>Registration Mark</td>
+                    <td id="vrn"></td>
+                  </tr>
+                  <tr>
+                    <td>Make</td>
+                    <td id="vehicleMake"></td>
+                  </tr>        
+                  <tr>
+                    <td>Model</td>
+                    <td id="vehicleModel"></td>
+                  </tr>     
+                  <tr>
+                    <td>Color</td>
+                    <td id="vehicleColor"></td>
+                  </tr>                      
+                  <tr>
+                    <td>Condition</td>
+                    <td id="vehicleCondition"></td>
+                  </tr>           
+                  <tr>
+                    <td>Tax Expiry Date</td>
+                    <td id="taxExpiryDate"></td>
+                  </tr>                  
+                  <tr>
+                    <td>Refuse Disposal Notice Placed On</td>
+                    <td id="noticePlacedOn"></td>
+                  </tr>    
+                  <tr>
+                    <td>Second Inspection Date</td>
+                    <td id="secondInspectionDate"></td>
+                  </tr> 
+                </tbody>
+            </table>
+            
+            <h4>Owner Details</h4> 
+            <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Owner Name</td>
+                    <td id="ownerName"></td>
+                  </tr>
+                  <tr>
+                    <td>Owner Address</td>
+                    <td id="ownerAddress"></td>
+                  </tr>                    
+                </tbody>
+            </table>
+            
+        </div>
+    
+    </div>
+
+      <div class="nav-buttons">
+        <a href="index.html" class="btn btn-primary pull-right" id="new" role="button">Start New Report</a>
+        
+        <!--  link updated with js using item id -->
+        <a class="btn btn-default pull-right" id="edit" role="button">Edit This Report</a>  
+      </div>
+    
+</div>
