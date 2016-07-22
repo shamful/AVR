@@ -199,7 +199,11 @@ function newFormEvents(){
         for(var i=0; i<files.length; i++){
             console.log(files[i]);
             attachments.push(files[i]);
+            $('#filesCached ol').append('<li>'+files[i].name+'</li>');
+            
         }
+        
+        
         
 //        attachments.push(files); 
         console.log(attachments);
@@ -233,6 +237,7 @@ function prepNewForm(){
         overwriteInitial: false,
         allowFullScreen: false,
         showUpload: false,
+        showPreview: false,
         layoutTemplates: {
             main1:
             "<div class=\'input-group {class}\'>\n" +
