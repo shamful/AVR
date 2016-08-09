@@ -3,17 +3,32 @@
     <div class="panel panel-primary">
         <div class="panel-heading" id="viewReportHeading">Viewing Report ID: <span><!-- ID --></span></div>
         <div class="panel-body">
-            <div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-exclamation-sign"></span> <strong>Please proceed with the second inspection of this vehicle on or shortly after <span id="inspectionNotice"></span></strong></div>
+            <div class="alert" role="alert" id="notice"><i class="fa fa-bell-o" aria-hidden="true" style="padding-right:10px"></i> 
+                
+            </div>
+            
             <h4>Report</h4>   
             <table class="table">
                 <tbody>
                   <tr>
                     <td>Reported By</td>
-                    <td id="reportedBy"></td>
-                  </tr>                    
+                    <td id="Author"></td>
+                  </tr> 
                   <tr>
                     <td>Report Type</td>
                     <td id="reportType"></td>
+                  </tr>
+                  <tr>
+                    <td>Report Stage</td>
+                    <td id="status"></td>
+                  </tr>
+                  <tr>
+                    <td>Removal Requested On</td>
+                    <td id="removalRequestedDate"></td>
+                  </tr>
+                  <tr>
+                    <td>Vehicle Removed On</td>
+                    <td id="vehicleRemovedDate"></td>
                   </tr>
                 </tbody>
             </table>
@@ -34,6 +49,10 @@
                     <td id="block"></td>
                   </tr>
                   <tr>
+                    <td>Other Location Information</td>
+                    <td id="otherLocation"></td>
+                  </tr>
+                  <tr>
                     <td>Access Information</td>
                     <td id="access"></td>
                   </tr>
@@ -45,7 +64,36 @@
                 <tbody>
                   <tr>
                     <td>Attachments</td>
-                    <td id="attachments"></td>
+                    <td id="attachments" >
+                        <p><input type="button" id="openSlideshow" class="btn btn-default" value="Open Slideshow" style="display:none"> </p>
+                    </td>
+                  </tr>
+                  <tr style="display:none">
+                    <td colspan="2" id="slideshow" >
+                        <p><input type="button" id="closeSlideshow" class="btn btn-default" value="Close Slideshow"> </p>
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                          <!-- Indicators -->
+                          <ol class="carousel-indicators">
+                              <!--  populate with js     -->
+                          </ol>
+
+                          <!-- Wrapper for slides -->
+                          <div class="carousel-inner" role="listbox">
+                              <!--populate with js-->
+                          </div>
+
+                          <!-- Controls -->
+                          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>                        
+                        
+                    </td>
                   </tr>
                   <tr>
                     <td>Type</td>
@@ -77,11 +125,11 @@
                   </tr>                  
                   <tr>
                     <td>Refuse Disposal Notice Placed On</td>
-                    <td id="noticePlacedOn"></td>
+                    <td id="noticePlacedDate"></td>
                   </tr>    
                   <tr>
                     <td>Second Inspection Date</td>
-                    <td id="secondInspectionDate"></td>
+                    <td class="secondInspectionDate"></td>
                   </tr> 
                 </tbody>
             </table>
@@ -108,7 +156,7 @@
         <a href="index.html" class="btn btn-primary pull-right" id="new" role="button">Start New Report</a>
         
         <!--  link updated with js using item id -->
-        <a class="btn btn-default pull-right" id="edit" role="button">Edit This Report</a>  
+        <a class="btn btn-info pull-right" id="edit" role="button">Update This Report</a>  
       </div>
     
 </div>

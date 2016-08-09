@@ -11,7 +11,7 @@ body {
 }
 
 /* Goodbye rounded corners! */
-* {
+input, label {
   border-radius: 0px !important;
 }
 /* Goodbye outline glow thing on buttons */
@@ -31,6 +31,7 @@ label.btn.btn-info.active {
     margin-bottom: 10px !important;
 }
 label.btn.btn-info {
+    margin: 0px 10px;
     background-color: transparent;
     color: black;
     border: 1px solid black;
@@ -39,13 +40,12 @@ label.btn.btn-info {
 label.btn.btn-info.active {
     background-color: #3e3f3a;
     color: white;
-    margin: 0px 10px;
 }
-label.btn.btn-info.active:first-child {
+label.btn.btn-info:first-child {
     margin: 0px 10px 0px 0px;
 }
-label.btn.btn-info.active:last-child {
-    margin: 0px 0px 0px 10px;
+label.btn.btn-info:last-child {
+    margin: 0px 0px 0px 0px;
 }
 .btn-group{
     display: table;
@@ -66,13 +66,42 @@ label.btn.btn-info.active:last-child {
     font-weight: bold;
 }
 #viewReport table tr:hover{
-    background-color: #ededed;
-}
-/* nav buttons */
-.nav-buttons > .btn{
-    margin: 0px 5px;
+    background-color: #f2f2f2;
 }
 
+/* navbar */
+div#navbar {
+    margin-left: 10px;
+}
+/* all buttons */
+.btn{
+    margin: 5px;
+}
+
+/* file input */
+/*
+hide  default file input
+this feels like a hack
+although it's invisible, changing height positions and makes jquery validation popup work
+*/
+input[type="file"]{
+	width: 1px;
+	height: 40px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+/*carousel gallery */
+.carousel img {
+  width: 100%;
+  height: 300px;
+}
+.carousel-caption {
+    background-color: rgba(0, 140, 186, 0.7);
+    bottom: 25px;
+}
 
 /* PRINTING PAGE STYLES */
 @media print{
