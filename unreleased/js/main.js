@@ -119,7 +119,7 @@ function edit(json, itemId){
     $('#newReportForm').attr('id','editForm');
     
     // change submit button to save
-    $('#submit').attr('id','save').text('Save Report');
+    $('#submit').attr('id','save').html('<i class="fa fa-floppy-o"></i>&nbsp; Save this report');
     
     // convert 1st inspection input into second inspection input
 //    $('#1st-inspection')
@@ -222,30 +222,35 @@ function view(json, itemId){
     getAttachmentFiles(listName, itemId, printAttachments);
     
     function printAttachments(urls){
+        
         for(var i =0; i< urls.length; i++){
             filename = urls[i].split('/').pop();
             $('#attachments').append("<a href='"+urls[i]+"' target='_new'>"+filename+"</a><br>");
 
-            // populate carousel
-            $('.carousel-inner').append(
-                    '<div class="item">'
-                      +'<a href="'+urls[i]+'" target="_new">'
-                        +'<img src="'+urls[i]+'" alt="Slide '+i+'">'
-                        +'<div class="carousel-caption">'
-                          +i+'. '+filename
-                        +'</div>'
-                        +'</a>'
-                    +'</div>' 
-            );
-
-            $('.carousel-indicators').append(
-                '<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>'
-            );
-            if(i===0) {
-                $('.carousel-indicators > li, .carousel-inner .item').addClass('active');
-            }
+//            // populate carousel
+//            $('.carousel-inner').append(
+//                    '<div class="item">'
+//                      +'<a href="'+urls[i]+'" target="_new">'
+//                        +'<img src="'+urls[i]+'" alt="Slide '+i+'">'
+//                        +'<div class="carousel-caption">'
+//                          +i+'. '+filename
+//                        +'</div>'
+//                        +'</a>'
+//                    +'</div>' 
+//            );
+//
+//            $('.carousel-indicators').append(
+//                '<li data-target="#carousel-example-generic" data-slide-to="'+i+'"></li>'
+//            );
+//            if(i===0) {
+//                $('.carousel-indicators > li, .carousel-inner .item').addClass('active');
+//            }
         };    
         
+
+        // &#92; = backslash ('\').  In some cases escaping ('/\' doesn't work, so we use the ascii code.
+        $('#attachments').append( ' <br><p><a class="btn btn-default btn-sm" style="margin-left: 0px !important" href="file:///&#92;&#92;izzi&#92;DavWWWRoot&#92;teams/\council/\hass/\operations/\hassep/\AbandonedVehicles/\Development/\Lists/\abandonedVehicleReports/\Attachments&#92;'+reportId+'"><i class="fa fa-folder-open"></i> &nbsp; Open attachments folder</a></p> ' );
+
         // display form wrapper
         $('#sections').fadeIn(100);
     }

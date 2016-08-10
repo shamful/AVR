@@ -7,8 +7,9 @@
      
 body {
     padding-top: 80px;
-    padding-bottom: 20px;
+    padding-bottom: 60px;
 }
+
 
 /* Goodbye rounded corners! */
 input, label {

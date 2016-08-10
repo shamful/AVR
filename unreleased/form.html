@@ -3,14 +3,13 @@
     <form id="newReportForm" method="post">
 
         <div class="jumbotron notice">
-            <strong>! TEST System - Please DO NOT use this form for real reports</strong>
             <h2>Report an abandoned, dangerous or nuisance vehicle </h2>
-            <p><small>Welcome to the test phase of the new abandoned vehicle report form.<br>
-                Please submit a new report by filling in the below form and clicking 'Submit Report'.  
-                &nbsp; After submitting the report you should receive a confirmation email with a link to your report.<br><br>
-                Fields marked with <i class="fa fa-asterisk"></i> are required
-                </small>
-            </p>
+            
+                <h5>Welcome to the test phase of the new abandoned vehicle report form.<h5>
+                <h5>Please submit a new report by filling in the below form and clicking the 'Submit Report' button. </h5>
+                <h5>After submitting the report you will receive a confirmation email with a link to your report.</h5>
+                <h5>Fields marked with <i class="fa fa-asterisk"></i> are required</h5>
+            
             <a  href="#" class="btn btn-default" onclick="$(this).parent().fadeOut(100)">Hide this message</a>
             
         </div>
@@ -173,6 +172,22 @@
               <label class="control-label " >
                Vehicle and Notice Images <i class="fa fa-asterisk"></i>
               </label> 
+                <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <!-- list of office mim types: http://stackoverflow.com/questions/4212861/what-is-a-correct-mime-type-for-docx-pptx-etc    -->
+                        <!-- all mime types: http://www.iana.org/assignments/media-types/media-types.xhtml    -->
+                    <input type="file" id="1st-inspection" name="images1[]" capture="camera" multiple />
+                    <label for="1st-inspection" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-camera"></span>&nbsp; Upload Inspection Images
+                    </label>
+                </div>
+                <!--  on change of file input, update this with list of files     -->
+                <div id="filesCached" style="display:none">
+                    <label class="control-label"><b>Attachments selected: </b>
+                        <ol>
+                            <!--   update on change of file input -->
+                        </ol>
+                    </label>
+                </div>  
                 <span class="help-block" id="hint_vehicleMake">
                     Please attach at least four date stamped images on the date the notice was applied and an additional four images seven days after the notice was applied.  Images should meet the following criteria:
                     <p>
@@ -193,22 +208,7 @@
                     </p>
                     If the second inspection hasn't yet been carried out you may return and update this report after 7 days using the link in the confirmation email.
                 </span>
-                <div class="fileinput fileinput-new" data-provides="fileinput">
-                        <!-- list of office mim types: http://stackoverflow.com/questions/4212861/what-is-a-correct-mime-type-for-docx-pptx-etc    -->
-                        <!-- all mime types: http://www.iana.org/assignments/media-types/media-types.xhtml    -->
-                    <input type="file" id="1st-inspection" name="images1[]" capture="camera" multiple />
-                    <label for="1st-inspection" class="btn btn-primary">
-                        Upload Inspection Images &nbsp;<span class="glyphicon glyphicon-camera"></span>
-                    </label>
-                </div>
-                <!--  on change of file input, update this with list of files     -->
-                <div id="filesCached" style="display:none">
-                    <label class="control-label"><b>Attachments to be uploaded: </b>
-                        <ol>
-                            <!--   update on change of file input -->
-                        </ol>
-                    </label>
-                </div>   
+ 
              </div>
 
              <div class="form-group ">
@@ -299,7 +299,7 @@
               <label class="control-label " for="taxExpiryDate">
                Tax Expiry Date
               </label>
-              <input class="form-control date" id="taxExpiryDate" name="taxExpiryDate" placeholder="DD/MM/YYYY" type="text" required />
+              <input class="form-control date" id="taxExpiryDate" name="taxExpiryDate" placeholder="DD/MM/YYYY" type="text" />
               <span class="help-block" id="taxExpiryDate">
                Vehicles parked on Islington Estates are not required to display a tax disc, if a vehicle is in good condition and does not have a tax disc on display you should check online at <a href="https://www.vehicleenquiry.service.gov.uk" target="_new">https://www.vehicleenquiry.service.gov.uk</a>
               </span>
@@ -325,12 +325,12 @@
             </div>
         </div>
 
-         <div class="form-group">
-          <div>
-           <button class="btn btn-primary pull-right" id="submit" name="submit" type="submit">
-            Submit Report
-           </button>
-          </div>
+         <div class="form-group">    
+          <ul class="navbar navbar-default navbar-fixed-bottom text-center" id="myNav">
+               <button class="btn btn-success" id="submit" name="submit" type="submit">
+                Submit report &nbsp;<i class="fa fa-chevron-right"></i>
+               </button>
+          </ul>
          </div>
 
      </form>
